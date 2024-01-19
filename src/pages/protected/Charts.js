@@ -1,19 +1,18 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import Charts from '../../features/charts'
-import { setPageTitle } from '../../features/common/headerSlice'
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import Concursos from "../../features/charts";
+import { setPageTitle } from "../../features/common/headerSlice";
 
-function InternalPage(){
-    const dispatch = useDispatch()
+import TitleCard from "../../components/Cards/TitleCard";
 
-    useEffect(() => {
-        dispatch(setPageTitle({ title : "Analytics"}))
-      }, [])
+function InternalPage() {
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(setPageTitle({ title: "Analytics" }));
+  }, []);
 
-    return(
-        <Charts />
-    )
+  return <Concursos />;
 }
 
-export default InternalPage
+export default InternalPage;
